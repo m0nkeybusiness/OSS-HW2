@@ -5,25 +5,12 @@ import Button from './Components/Button';
 import Bold from './Components/Bold';
 import Underline from './Components/Underline';
 import Italic from './Components/Italic';
-import InfoBlock from './Components/InfoBlock';
+import BlockWrapper from './Components/BlockWrapper';
 import './App.css';
 
 const App = () => {
+   const types = ['Success', 'Info', 'Warning', 'Error'];
    const clickHandler = () => {
-      // let userInp = prompt('Type: success, info, error', 'error');
-      // while (true) {
-      //    if (
-      //       typeof userInp === 'object' ||
-      //       userInp.toLowerCase() === 'success' ||
-      //       userInp.toLowerCase() === 'info' ||
-      //       userInp.toLowerCase() === 'error'
-      //    ) {
-      //       break;
-      //    } else {
-      //       userInp = prompt('ENTER PLEEEAAASE: SUCCESS, INFO, ERROR');
-      //    }
-      // }
-      // return userInp.toLowerCase();
       alert('Privet Andrey');
    };
 
@@ -32,10 +19,20 @@ const App = () => {
          <Menu />
          <Button setClickHandler={clickHandler} />
          <Section>
-            <div className="option">
-               <h1>Hidden Text</h1>
-               <InfoBlock type="error" />
-            </div>
+            {types.map((type) => {
+               return (
+                  <div
+                     style={{
+                        border: '2px dashed purple',
+                        padding: '5px',
+                        margin: '20px 0',
+                     }}
+                  >
+                     <h2>{type}</h2>
+                     <BlockWrapper type={type.toLowerCase()} />
+                  </div>
+               );
+            })}
          </Section>
          <Section id="article">
             <h2>Статьи</h2>
