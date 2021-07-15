@@ -1,0 +1,17 @@
+.menu_wrapper {
+   width: 100%;
+   padding: 20px 0 20px 0;
+   margin: 0 auto;
+   border: 1px solid red;
+   position: sticky;
+   top: 0;
+   background-color: rgba(121, 9, 108, 1);
+}
+
+.menu {
+   display: flex;
+   justify-content: space-around;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
